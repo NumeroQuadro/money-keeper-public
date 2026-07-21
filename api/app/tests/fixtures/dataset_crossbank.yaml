@@ -1,0 +1,659 @@
+accounts:
+  - id: acc_ozon
+    provider: ozon
+    account_type: card
+    display_name: Ozon Card
+    currency: RUB
+  - id: acc_sber
+    provider: sber
+    account_type: savings
+    display_name: Sber Savings
+    currency: RUB
+  - id: acc_yandex
+    provider: yandex
+    account_type: wallet
+    display_name: Yandex Wallet
+    currency: RUB
+
+statements:
+  - id: st_ozon_main
+    account_id: acc_ozon
+    provider: ozon
+    statement_type: card
+    currency: RUB
+    period_start: "2026-01-01T00:00:00"
+    period_end: "2026-01-31T23:59:59"
+    opening_balance: 10000.00
+    closing_balance: 6400.00
+    parse_confidence: 0.92
+    reconcile_status: ok
+  - id: st_ozon_overlap
+    account_id: acc_ozon
+    provider: ozon
+    statement_type: card
+    currency: RUB
+    period_start: "2026-01-10T00:00:00"
+    period_end: "2026-01-20T23:59:59"
+    opening_balance: 7800.00
+    closing_balance: 6400.00
+    parse_confidence: 0.90
+    reconcile_status: ok
+  - id: st_sber_main
+    account_id: acc_sber
+    provider: sber
+    statement_type: savings
+    currency: RUB
+    period_start: "2026-01-01T00:00:00"
+    period_end: "2026-01-31T23:59:59"
+    opening_balance: 20000.00
+    closing_balance: 25100.00
+    parse_confidence: 0.88
+    reconcile_status: ok
+  - id: st_yandex_main
+    account_id: acc_yandex
+    provider: yandex
+    statement_type: wallet
+    currency: RUB
+    period_start: "2026-01-01T00:00:00"
+    period_end: "2026-01-31T23:59:59"
+    opening_balance: 3000.00
+    closing_balance: 3995.00
+    parse_confidence: 0.86
+    reconcile_status: ok
+
+  - id: st_ozon_full_history
+    account_id: acc_ozon
+    provider: ozon
+    statement_type: card
+    currency: RUB
+    period_start: "2025-12-01T00:00:00"
+    period_end: "2026-01-31T23:59:59"
+    opening_balance: 10000.00
+    closing_balance: 8878.00
+    parse_confidence: 0.90
+    reconcile_status: ok
+  - id: st_ozon_monthly_overlap
+    account_id: acc_ozon
+    provider: ozon
+    statement_type: card
+    currency: RUB
+    period_start: "2026-01-01T00:00:00"
+    period_end: "2026-01-31T23:59:59"
+    opening_balance: 9000.00
+    closing_balance: 8827.00
+    parse_confidence: 0.90
+    reconcile_status: ok
+
+  - id: st_ozon_text_var_a
+    account_id: acc_ozon
+    provider: ozon
+    statement_type: card
+    currency: RUB
+    period_start: "2026-01-20T00:00:00"
+    period_end: "2026-01-20T23:59:59"
+    opening_balance: 1000.00
+    closing_balance: 678.55
+    parse_confidence: 0.90
+    reconcile_status: ok
+  - id: st_ozon_text_var_b
+    account_id: acc_ozon
+    provider: ozon
+    statement_type: card
+    currency: RUB
+    period_start: "2026-01-20T00:00:00"
+    period_end: "2026-01-20T23:59:59"
+    opening_balance: 1000.00
+    closing_balance: 678.55
+    parse_confidence: 0.90
+    reconcile_status: ok
+
+  - id: st_ozon_date_drift_a
+    account_id: acc_ozon
+    provider: ozon
+    statement_type: card
+    currency: RUB
+    period_start: "2026-01-15T00:00:00"
+    period_end: "2026-01-15T23:59:59"
+    opening_balance: 5000.00
+    closing_balance: 4001.00
+    parse_confidence: 0.90
+    reconcile_status: ok
+  - id: st_ozon_date_drift_b
+    account_id: acc_ozon
+    provider: ozon
+    statement_type: card
+    currency: RUB
+    period_start: "2026-01-16T00:00:00"
+    period_end: "2026-01-16T23:59:59"
+    opening_balance: 5000.00
+    closing_balance: 4001.00
+    parse_confidence: 0.90
+    reconcile_status: ok
+
+  - id: st_ozon_same_amount_a
+    account_id: acc_ozon
+    provider: ozon
+    statement_type: card
+    currency: RUB
+    period_start: "2026-01-22T00:00:00"
+    period_end: "2026-01-22T23:59:59"
+    opening_balance: 3000.00
+    closing_balance: 2000.00
+    parse_confidence: 0.90
+    reconcile_status: ok
+  - id: st_ozon_same_amount_b
+    account_id: acc_ozon
+    provider: ozon
+    statement_type: card
+    currency: RUB
+    period_start: "2026-01-22T00:00:00"
+    period_end: "2026-01-22T23:59:59"
+    opening_balance: 3000.00
+    closing_balance: 2000.00
+    parse_confidence: 0.90
+    reconcile_status: ok
+
+rows:
+  - statement_id: st_ozon_main
+    row_index: 0
+    page_number: 1
+    raw_text: "10.01.2026 10:00 Перевод между своими счетами -5000.00"
+    operation_date: "2026-01-10T10:00:00"
+    posting_date: null
+    amount: 5000.00
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-10T10:00:00"
+      posting_datetime: null
+      amount: 5000.00
+      currency: RUB
+      direction: out
+      description_raw: "Перевод между своими счетами"
+      merchant_normalized: ""
+      bank_reference_id: "XFER-100"
+      bank_category: "transfer"
+      meaning: unknown
+      meaning_confidence: null
+      category: ""
+      tags: []
+
+  - statement_id: st_sber_main
+    row_index: 0
+    page_number: 1
+    raw_text: "10.01.2026 10:03 Перевод между своими счетами +5000.00"
+    operation_date: "2026-01-10T10:03:00"
+    posting_date: null
+    amount: 5000.00
+    currency: RUB
+    direction: in
+    tx:
+      operation_datetime: "2026-01-10T10:03:00"
+      posting_datetime: null
+      amount: 5000.00
+      currency: RUB
+      direction: in
+      description_raw: "Перевод между своими счетами"
+      merchant_normalized: ""
+      bank_reference_id: "XFER-101"
+      bank_category: "transfer"
+      meaning: unknown
+      meaning_confidence: null
+      category: ""
+      tags: []
+
+  - statement_id: st_yandex_main
+    row_index: 0
+    page_number: 1
+    raw_text: "11.01.2026 12:00 Transfer to own card -1200.00"
+    operation_date: "2026-01-11T12:00:00"
+    posting_date: null
+    amount: 1200.00
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-11T12:00:00"
+      posting_datetime: null
+      amount: 1200.00
+      currency: RUB
+      direction: out
+      description_raw: "Transfer to own card"
+      merchant_normalized: ""
+      bank_reference_id: "XFER-200"
+      bank_category: ""
+      meaning: unknown
+      meaning_confidence: null
+      category: ""
+      tags: []
+
+  - statement_id: st_ozon_main
+    row_index: 1
+    page_number: 1
+    raw_text: "11.01.2026 12:10 Card replenishment +1200.00"
+    operation_date: "2026-01-11T12:10:00"
+    posting_date: null
+    amount: 1200.00
+    currency: RUB
+    direction: in
+    tx:
+      operation_datetime: "2026-01-11T12:10:00"
+      posting_datetime: null
+      amount: 1200.00
+      currency: RUB
+      direction: in
+      description_raw: "Card replenishment"
+      merchant_normalized: ""
+      bank_reference_id: "XFER-201"
+      bank_category: ""
+      meaning: unknown
+      meaning_confidence: null
+      category: ""
+      tags: []
+
+  - statement_id: st_ozon_main
+    row_index: 2
+    page_number: 1
+    raw_text: "12.01.2026 09:40 Оплата СБП OOO MARKET -900.00"
+    operation_date: "2026-01-12T09:40:00"
+    posting_date: null
+    amount: 900.00
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-12T09:40:00"
+      posting_datetime: null
+      amount: 900.00
+      currency: RUB
+      direction: out
+      description_raw: "Оплата СБП OOO MARKET"
+      merchant_normalized: "OOO MARKET"
+      bank_reference_id: "PAY-300"
+      bank_category: "shopping"
+      meaning: spend
+      meaning_confidence: 0.99
+      category: "Shopping"
+      tags: [sbp, merchant]
+
+  - statement_id: st_sber_main
+    row_index: 1
+    page_number: 1
+    raw_text: "13.01.2026 10:00 Transfer between accounts -1000.00"
+    operation_date: "2026-01-13T10:00:00"
+    posting_date: null
+    amount: 1000.00
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-13T10:00:00"
+      posting_datetime: null
+      amount: 1000.00
+      currency: RUB
+      direction: out
+      description_raw: "Transfer between accounts"
+      merchant_normalized: ""
+      bank_reference_id: "XFER-300"
+      bank_category: "transfer"
+      meaning: unknown
+      meaning_confidence: null
+      category: ""
+      tags: []
+
+  - statement_id: st_yandex_main
+    row_index: 1
+    page_number: 1
+    raw_text: "13.01.2026 10:02 Transfer between accounts +995.00"
+    operation_date: "2026-01-13T10:02:00"
+    posting_date: null
+    amount: 995.00
+    currency: RUB
+    direction: in
+    tx:
+      operation_datetime: "2026-01-13T10:02:00"
+      posting_datetime: null
+      amount: 995.00
+      currency: RUB
+      direction: in
+      description_raw: "Transfer between accounts"
+      merchant_normalized: ""
+      bank_reference_id: "XFER-301"
+      bank_category: "transfer"
+      meaning: unknown
+      meaning_confidence: null
+      category: ""
+      tags: []
+
+  - statement_id: st_ozon_main
+    row_index: 3
+    page_number: 1
+    raw_text: "14.01.2026 09:00 Coffee House Moscow -750.00"
+    operation_date: "2026-01-14T09:00:00"
+    posting_date: null
+    amount: 750.00
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-14T09:00:00"
+      posting_datetime: null
+      amount: 750.00
+      currency: RUB
+      direction: out
+      description_raw: "Coffee House Moscow"
+      merchant_normalized: "Coffee House"
+      bank_reference_id: "PAY-400"
+      bank_category: "food"
+      meaning: spend
+      meaning_confidence: 0.95
+      category: "Food"
+      tags: [coffee]
+
+  - statement_id: st_ozon_overlap
+    row_index: 0
+    page_number: 1
+    raw_text: "14.01.2026 09:00 Coffee House Moscow -750.00"
+    operation_date: "2026-01-14T09:00:00"
+    posting_date: null
+    amount: 750.00
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-14T09:00:00"
+      posting_datetime: null
+      amount: 750.00
+      currency: RUB
+      direction: out
+      description_raw: "Coffee House Moscow"
+      merchant_normalized: "Coffee House"
+      bank_reference_id: "PAY-400"
+      bank_category: "food"
+      meaning: spend
+      meaning_confidence: 0.95
+      category: "Food"
+      tags: [coffee]
+
+  - statement_id: st_ozon_main
+    row_index: 4
+    page_number: 1
+    raw_text: "14.01.2026 19:00 Coffee House Moscow -750.00"
+    operation_date: "2026-01-14T19:00:00"
+    posting_date: null
+    amount: 750.00
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-14T19:00:00"
+      posting_datetime: null
+      amount: 750.00
+      currency: RUB
+      direction: out
+      description_raw: "Coffee House Moscow"
+      merchant_normalized: "Coffee House"
+      bank_reference_id: "PAY-401"
+      bank_category: "food"
+      meaning: spend
+      meaning_confidence: 0.95
+      category: "Food"
+      tags: [coffee]
+
+  - statement_id: st_ozon_full_history
+    row_index: 0
+    page_number: 1
+    raw_text: "05.01.2026 12:00 ACME STORE PURCHASE -123.00"
+    operation_date: "2026-01-05T12:00:00"
+    posting_date: null
+    amount: 123.00
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-05T12:00:00"
+      posting_datetime: null
+      amount: 123.00
+      currency: RUB
+      direction: out
+      description_raw: "ACME STORE PURCHASE"
+      merchant_normalized: "ACME"
+      bank_reference_id: "PAY-500"
+      bank_category: "shopping"
+      meaning: spend
+      meaning_confidence: 0.90
+      category: "Shopping"
+      tags: [acme]
+
+  - statement_id: st_ozon_full_history
+    row_index: 1
+    page_number: 1
+    raw_text: "10.01.2026 09:15 Gym membership -999.00"
+    operation_date: "2026-01-10T09:15:00"
+    posting_date: null
+    amount: 999.00
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-10T09:15:00"
+      posting_datetime: null
+      amount: 999.00
+      currency: RUB
+      direction: out
+      description_raw: "Gym membership"
+      merchant_normalized: "Gym"
+      bank_reference_id: "PAY-501"
+      bank_category: "health"
+      meaning: spend
+      meaning_confidence: 0.90
+      category: "Health"
+      tags: [gym]
+
+  - statement_id: st_ozon_monthly_overlap
+    row_index: 0
+    page_number: 1
+    raw_text: "05.01.2026 12:00 ACME Store purchase (MCC 5411) -123.00"
+    operation_date: "2026-01-05T12:00:00"
+    posting_date: "2026-01-06T00:00:00"
+    amount: 123.00
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-05T12:00:00"
+      posting_datetime: "2026-01-06T00:00:00"
+      amount: 123.00
+      currency: RUB
+      direction: out
+      description_raw: "Acme Store purchase"
+      merchant_normalized: "ACME"
+      bank_reference_id: "PAY 500"
+      bank_category: "shopping"
+      meaning: spend
+      meaning_confidence: 0.90
+      category: "Shopping"
+      tags: [acme]
+
+  - statement_id: st_ozon_monthly_overlap
+    row_index: 1
+    page_number: 1
+    raw_text: "12.01.2026 08:00 Service fee -50.00"
+    operation_date: "2026-01-12T08:00:00"
+    posting_date: null
+    amount: 50.00
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-12T08:00:00"
+      posting_datetime: null
+      amount: 50.00
+      currency: RUB
+      direction: out
+      description_raw: "Service fee"
+      merchant_normalized: ""
+      bank_reference_id: "FEE-001"
+      bank_category: "fees"
+      meaning: unknown
+      meaning_confidence: null
+      category: ""
+      tags: []
+
+  - statement_id: st_ozon_text_var_a
+    row_index: 0
+    page_number: 1
+    raw_text: "20.01.2026 18:30 Yandex Go ride -321.45"
+    operation_date: "2026-01-20T18:30:00"
+    posting_date: null
+    amount: 321.45
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-20T18:30:00"
+      posting_datetime: null
+      amount: 321.45
+      currency: RUB
+      direction: out
+      description_raw: "Yandex Go ride"
+      merchant_normalized: "Yandex Go"
+      bank_reference_id: ""
+      bank_category: "transport"
+      meaning: spend
+      meaning_confidence: 0.80
+      category: "Transport"
+      tags: [taxi]
+
+  - statement_id: st_ozon_text_var_b
+    row_index: 0
+    page_number: 1
+    raw_text: "20.01.2026 18:30 Yandex.Go Ride (MCC 4121) -321.45"
+    operation_date: "2026-01-20T18:30:00"
+    posting_date: null
+    amount: 321.45
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-20T18:30:00"
+      posting_datetime: null
+      amount: 321.45
+      currency: RUB
+      direction: out
+      description_raw: "Yandex.Go Ride MCC 4121"
+      merchant_normalized: "Yandex Go"
+      bank_reference_id: ""
+      bank_category: "transport"
+      meaning: spend
+      meaning_confidence: 0.80
+      category: "Transport"
+      tags: [taxi]
+
+  - statement_id: st_ozon_date_drift_a
+    row_index: 0
+    page_number: 1
+    raw_text: "15.01.2026 10:00 Streaming subscription -999.00"
+    operation_date: "2026-01-15T10:00:00"
+    posting_date: null
+    amount: 999.00
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-15T10:00:00"
+      posting_datetime: null
+      amount: 999.00
+      currency: RUB
+      direction: out
+      description_raw: "Streaming subscription"
+      merchant_normalized: "StreamCo"
+      bank_reference_id: ""
+      bank_category: "services"
+      meaning: spend
+      meaning_confidence: 0.70
+      category: "Services"
+      tags: [subscription]
+
+  - statement_id: st_ozon_date_drift_b
+    row_index: 0
+    page_number: 1
+    raw_text: "16.01.2026 10:00 Streaming subscription -999.00 (posted)"
+    operation_date: "2026-01-16T10:00:00"
+    posting_date: null
+    amount: 999.00
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-16T10:00:00"
+      posting_datetime: null
+      amount: 999.00
+      currency: RUB
+      direction: out
+      description_raw: "Streaming subscription posted"
+      merchant_normalized: "StreamCo"
+      bank_reference_id: ""
+      bank_category: "services"
+      meaning: spend
+      meaning_confidence: 0.70
+      category: "Services"
+      tags: [subscription]
+
+  - statement_id: st_ozon_same_amount_a
+    row_index: 0
+    page_number: 1
+    raw_text: "22.01.2026 09:00 Coffee House -500.00"
+    operation_date: "2026-01-22T09:00:00"
+    posting_date: null
+    amount: 500.00
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-22T09:00:00"
+      posting_datetime: null
+      amount: 500.00
+      currency: RUB
+      direction: out
+      description_raw: "Coffee House"
+      merchant_normalized: "Coffee House"
+      bank_reference_id: ""
+      bank_category: "food"
+      meaning: spend
+      meaning_confidence: 0.90
+      category: "Food"
+      tags: [coffee]
+
+  - statement_id: st_ozon_same_amount_a
+    row_index: 1
+    page_number: 1
+    raw_text: "22.01.2026 19:00 Coffee House -500.00"
+    operation_date: "2026-01-22T19:00:00"
+    posting_date: null
+    amount: 500.00
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-22T19:00:00"
+      posting_datetime: null
+      amount: 500.00
+      currency: RUB
+      direction: out
+      description_raw: "Coffee House"
+      merchant_normalized: "Coffee House"
+      bank_reference_id: ""
+      bank_category: "food"
+      meaning: spend
+      meaning_confidence: 0.90
+      category: "Food"
+      tags: [coffee]
+
+  - statement_id: st_ozon_same_amount_b
+    row_index: 0
+    page_number: 1
+    raw_text: "22.01.2026 09:00 Coffee-House -500.00"
+    operation_date: "2026-01-22T09:00:00"
+    posting_date: null
+    amount: 500.00
+    currency: RUB
+    direction: out
+    tx:
+      operation_datetime: "2026-01-22T09:00:00"
+      posting_datetime: null
+      amount: 500.00
+      currency: RUB
+      direction: out
+      description_raw: "Coffee-House"
+      merchant_normalized: "Coffee House"
+      bank_reference_id: ""
+      bank_category: "food"
+      meaning: spend
+      meaning_confidence: 0.90
+      category: "Food"
+      tags: [coffee]

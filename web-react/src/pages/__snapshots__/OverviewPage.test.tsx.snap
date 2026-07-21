@@ -1,0 +1,105 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`OverviewPage > meets the Overview page contract guardrails 1`] = `
+<section
+  class="overview-top-grid"
+  data-testid="overview-top"
+>
+  <article
+    class="overview-hero"
+    data-testid="overview-hero"
+  >
+    <div
+      class="overview-hero-topline"
+    >
+      <span
+        class="overview-hero-kicker"
+      >
+        Spent (excluding transfers)
+      </span>
+      <span
+        class="overview-hero-pill is-negative"
+      >
+        +14 000,00 ₽ vs Feb
+         · +18%
+      </span>
+    </div>
+    <div
+      class="overview-hero-copy"
+    >
+      <h3>
+        Monthly outflow under review
+      </h3>
+      <strong
+        class="overview-hero-amount"
+      >
+        90 000,00 ₽
+      </strong>
+      <p
+        class="overview-hero-note"
+      >
+        Calculated from counted outflows for the selected month after linked internal transfers are excluded.
+      </p>
+    </div>
+    <div
+      class="overview-hero-actions"
+    >
+      <button
+        class="overview-primary-button"
+        type="button"
+      >
+        Open transactions
+      </button>
+      <button
+        class="overview-secondary-button"
+        type="button"
+      >
+        Open review
+      </button>
+    </div>
+  </article>
+  <aside
+    aria-label="Supporting metrics"
+    class="overview-rail"
+  >
+    <div
+      class="overview-metric-card"
+    >
+      <span
+        class="overview-metric-label"
+      >
+        Cash position
+      </span>
+      <strong
+        class="overview-metric-value"
+      >
+        345 000,00 ₽
+      </strong>
+      <span
+        class="overview-metric-note"
+      >
+        1 accounts in scope
+      </span>
+    </div>
+    <div
+      class="overview-metric-card is-warning"
+    >
+      <span
+        class="overview-metric-label"
+      >
+        Review desk
+      </span>
+      <strong
+        class="overview-metric-value"
+      >
+        1 pending
+      </strong>
+      <span
+        class="overview-metric-note"
+      >
+        Exceptions, transfer suggestions, and uncategorized rows.
+      </span>
+    </div>
+  </aside>
+</section>
+`;

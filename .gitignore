@@ -1,0 +1,57 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+.venv*/
+node_modules/
+
+.DS_Store
+.idea/
+.vscode/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*.json
+*service-account*.json
+
+# Personal financial data and runtime uploads
+*.pdf
+*.csv
+*.xlsx
+*.xls
+0_statements/
+data/*
+!data/.gitkeep
+api/data/
+uploads/
+
+# Generated output
+output/
+coverage/
+web-react/coverage/
+web-react/dist/
+web-react/playwright-report/
+web-react/test-results/
+.coverage*
+*.log
+
+# Local agent and issue-tracker state
+.agent/
+.agents/
+.beads/
+.codex/
+.gemini/
+.openclaw/
+.ralph-loop/
+.serena/
+skills/
+.dolt/
+*.db
