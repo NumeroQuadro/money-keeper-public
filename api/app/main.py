@@ -45,6 +45,9 @@ def _request_has_valid_admin_token(request: Request, expected_token: str) -> boo
 @app.on_event("startup")
 def startup() -> None:
     settings.ensure_paths()
+    if settings.api_read_only:
+        logger.info("API_READ_ONLY is enabled; skipping schema and background mutations.")
+        return
     Base.metadata.create_all(bind=engine)
     ensure_runtime_schema()
 
@@ -85,6 +88,8 @@ def startup() -> None:
 
 @app.middleware("http")
 async def admin_guard(request: Request, call_next):
+    if settings.api_read_only and request.method not in {"GET", "HEAD", "OPTIONS"}:
+        return JSONResponse(status_code=405, content={"detail": "API is read-only"})
     token = settings.api_admin_token
     if token and token != "change-me":
         if (

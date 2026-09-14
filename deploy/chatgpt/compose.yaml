@@ -1,0 +1,40 @@
+services:
+  api:
+    build:
+      context: ../..
+      dockerfile: api/Dockerfile
+    image: money-keeper-api:chatgpt-readonly
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: ${DATABASE_URL:?DATABASE_URL is required}
+      API_ADMIN_TOKEN: ${API_ADMIN_TOKEN:-change-me}
+      API_READ_ONLY: "true"
+      CORS_ALLOWED_ORIGINS: ""
+      DB_SEARCH_PATH: ${DB_SEARCH_PATH:-public}
+    expose: ["8000"]
+    read_only: true
+    tmpfs: ["/tmp", "/app/data"]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: ["ALL"]
+
+  mcp:
+    build:
+      context: ../../mcp-app
+    image: money-keeper-chatgpt-app:0.1.0
+    restart: unless-stopped
+    depends_on: ["api"]
+    environment:
+      NODE_ENV: production
+      PORT: "8787"
+      MONEY_KEEPER_API_BASE: http://api:8000/api
+      MONEY_KEEPER_API_TOKEN: ${API_ADMIN_TOKEN:-}
+      MCP_RESOURCE: ${MCP_RESOURCE:?MCP_RESOURCE is required}
+      OAUTH_ISSUER: ${OAUTH_ISSUER:?OAUTH_ISSUER is required}
+      OAUTH_AUDIENCE: ${OAUTH_AUDIENCE:?OAUTH_AUDIENCE is required}
+      OAUTH_REQUIRED_SCOPE: ${OAUTH_REQUIRED_SCOPE:?OAUTH_REQUIRED_SCOPE is required}
+      OAUTH_ALLOWED_SUBJECT: ${OAUTH_ALLOWED_SUBJECT:?OAUTH_ALLOWED_SUBJECT is required}
+    ports: ["127.0.0.1:2097:8787"]
+    read_only: true
+    tmpfs: ["/tmp"]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: ["ALL"]
