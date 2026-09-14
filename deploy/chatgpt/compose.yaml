@@ -1,8 +1,7 @@
 services:
   api:
     build:
-      context: ../..
-      dockerfile: api/Dockerfile
+      context: ../../api
     image: money-keeper-api:chatgpt-readonly
     restart: unless-stopped
     environment:
