@@ -37,7 +37,6 @@ class Settings(BaseSettings):
     api_admin_token: str = "change-me"
     api_bind_host: str = "0.0.0.0"
     api_bind_port: int = 8000
-    api_read_only: bool = False
     cors_allowed_origins: str = "*"
     uploads_dir: str = "./data/uploads"
     db_search_path: str = Field(

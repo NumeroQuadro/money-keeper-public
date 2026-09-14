@@ -15,8 +15,6 @@ node_modules/
 .env
 .env.*
 !.env.example
-mcp-app/.env
-deploy/chatgpt/.env
 *.pem
 *.key
 *.p12
@@ -40,7 +38,6 @@ output/
 coverage/
 web-react/coverage/
 web-react/dist/
-mcp-app/dist/
 web-react/playwright-report/
 web-react/test-results/
 .coverage*
@@ -58,7 +55,3 @@ web-react/test-results/
 skills/
 .dolt/
 *.db
-
-# Beads / Dolt files (added by bd init)
-.beads-credential-key
-.beads/proxieddb/

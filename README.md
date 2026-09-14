@@ -99,32 +99,10 @@ The stack loads local settings from `.env`. Important variables are documented i
 
 - `DATABASE_URL`: PostgreSQL connection URL
 - `API_ADMIN_TOKEN`: shared secret used for write operations
-- `API_READ_ONLY`: disables startup mutations and rejects every non-read API request
 - `CORS_ALLOWED_ORIGINS`: comma-separated browser origins
 - `BOT_TOKEN`: optional Telegram bot token
 - `OWNER_TELEGRAM_ID`: optional restriction to one Telegram user
 - `DB_SEARCH_PATH`: optional PostgreSQL search path
-
-## ChatGPT widget
-
-`mcp-app/` provides an OAuth-protected, read-only ChatGPT widget backed by the
-same normalized Money Keeper API. The compact overview shows true spending,
-income, net cashflow, cash position, category mix, recent transactions, and the
-number of rows needing review. Period, account, and category controls refresh
-the card through real MCP `tools/call` interactions.
-
-```bash
-cd mcp-app
-npm install
-npm test
-```
-
-Production templates live in `deploy/chatgpt/`. The companion API runs with
-`API_READ_ONLY=true`, so it performs no startup schema/bootstrap work and rejects
-POST, PUT, PATCH, and DELETE. Every MCP request must carry a valid OAuth 2.1 token;
-never deploy financial data with anonymous connector access. Copy the deployment
-`.env.example` to an untracked `.env`, configure a dedicated audience and
-`finance:read` scope, and add the Nginx locations to the HTTPS server block.
 
 ## Data safety
 
@@ -141,8 +119,6 @@ best-effort. Review uncertain imports before relying on analytics.
 api/         FastAPI backend, domain logic, parsers, and tests
 bot/         Telegram upload and review bot
 web-react/   React application, component tests, and Playwright specs
-mcp-app/     OAuth-protected MCP Apps connector and interactive ChatGPT widget
-deploy/      Production deployment templates
 scripts/     Auditing and data-maintenance utilities
 docs/        Product direction, page contracts, and architecture decisions
 ```

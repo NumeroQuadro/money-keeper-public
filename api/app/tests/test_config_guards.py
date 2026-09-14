@@ -74,17 +74,6 @@ class ConfigGuardTests(unittest.TestCase):
             settings = Settings()
             self.assertEqual(settings.db_search_path, "public, analytics")
 
-    def test_read_only_mode_can_be_enabled_from_environment(self) -> None:
-        with patch.dict(
-            os.environ,
-            {
-                "DATABASE_URL": "postgresql://db.example.com/money_keeper",
-                "API_READ_ONLY": "true",
-            },
-            clear=False,
-        ):
-            self.assertTrue(Settings().api_read_only)
-
     def test_rejects_invalid_db_search_path_segment(self) -> None:
         with self.assertRaisesRegex(ValueError, "comma-separated list of SQL identifiers"):
             validate_database_search_path("public, bad-schema")
